@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Tema1.Entities
 {
-    class JsonHandlerEntity
+    public class JsonHandlerEntity
     {
 
         public JsonHandlerEntity() { }

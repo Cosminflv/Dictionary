@@ -20,8 +20,11 @@ namespace Tema1
     public partial class MainWindow : Window
     {
         private ControllerEntity controllerEntity;
+        private JsonHandlerEntity jsonHandlerEntity;
+
         public MainWindow()
         {
+            jsonHandlerEntity = new JsonHandlerEntity();
             controllerEntity = new ControllerEntity();
             InitializeComponent();
 
@@ -32,13 +35,12 @@ namespace Tema1
             new WordEntity("Racheta", "Obiect sportiv pentru badminton", "Sport", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\racheta.JPG"),
             new WordEntity("Manusa", "Obiect sportiv pentru baseball", "Sport", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\manusa.JPG"),
         };
-            JsonHandlerEntity jsonHandlerEntity = new JsonHandlerEntity();
             jsonHandlerEntity.serializeWords(words, "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Json\\Words.json");
         }
 
         private void Admin_Button_Click(object sender, RoutedEventArgs e)
         {
-          var loginWindow = new LoginWindow(controllerEntity);
+          var loginWindow = new LoginWindow(jsonHandlerEntity);
             loginWindow.Show();
             this.Close();
         }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Tema1.Entities;
+using Tema1.Windows;
 
 namespace Tema1
 {
@@ -20,10 +21,11 @@ namespace Tema1
     /// </summary>
     public partial class LoginWindow : Window
     {
-        private ControllerEntity _controllerEntity;
-        public LoginWindow(ControllerEntity controllerEntity)
+        private AdminController _adminController;
+        public LoginWindow(Tema1.Entities.JsonHandlerEntity jsonHandlerEntity)
         {
-            _controllerEntity = controllerEntity;
+            _adminController = new AdminController(jsonHandlerEntity);
+
             InitializeComponent();
         }
 
@@ -31,7 +33,7 @@ namespace Tema1
         {
             string username = UsernameTextBox.Text;
             string password = PasswordBox.Password;
-            bool result = _controllerEntity.performLogin(username, password);
+            bool result = _adminController.performLogin(username, password);
 
             if (!result)
             {
@@ -39,8 +41,10 @@ namespace Tema1
                 ErrorMessageLabel.Visibility = Visibility.Visible; return;
             }
 
-            ErrorMessageLabel.Visibility = Visibility.Collapsed; return;
-
+            AdminWindow adminWindow = new AdminWindow(_adminController.JsonHandlerEntity);
+            adminWindow.Show();
+            this.Close(); 
+            ErrorMessageLabel.Visibility = Visibility.Collapsed;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

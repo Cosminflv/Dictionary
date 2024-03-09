@@ -23,27 +23,6 @@ namespace Tema1.Entities
             _adminEntity = new AdminEntity();
         }
 
-        public bool performLogin(string username, string password)
-        {
-            List<Tuple<string, string>>? accounts = _jsonHandlerEntity.getAccounts("D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Json\\Accounts.json");
-
-            if (accounts == null)
-            {
-                return false;
-            }
-
-            foreach (Tuple<string, string> acconut in accounts)
-            {
-                if (acconut.Item1 == username && acconut.Item2 == password)
-                {
-                    _adminEntity.loginStatus = true;
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
         public bool initDictionary()
         {
             List<WordEntity>? deserializedWords = _jsonHandlerEntity.getWordsFromJson("D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Json\\Words.json");
