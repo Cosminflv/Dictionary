@@ -110,14 +110,14 @@ namespace Tema1.Entities
             return words;
         }
 
-        public bool checkWordExistence(String text)
+        public WordEntity? checkWordExistence(String text)
         {
-            if(Words == null) return false;
+            if(Words == null) return null;
             foreach (var word in Words!)
             {
-                if (text == word.Name) return true;
+                if (text == word.Name) return word;
             }
-            return false;
+            return null;
         }
     }
 }

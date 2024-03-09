@@ -105,7 +105,7 @@ namespace Tema1.Entities
             }
         }
 
-        public String GetImageForWord(String wordToFind)
+        public string GetImageForWord(string wordToFind)
         {
             List<WordEntity> words = DictionaryEntity!.Words!;
             foreach (var word in words)
@@ -121,7 +121,20 @@ namespace Tema1.Entities
             return "D:/Informatica/ANUL II/MAP/MAPTema1/Tema1/images/no_image.JPG";
         }
 
-        public String GetDescriptionForWord(String wordToFind)
+        public string GetCategoryForWord(string wordToFind)
+        {
+            List<WordEntity> words = DictionaryEntity!.Words!;
+            foreach (var word in words)
+            {
+                if (wordToFind.Equals(word.Name))
+                {
+                    return word.Category;
+                }
+            }
+            return "No Category Found";
+        }
+
+        public string GetDescriptionForWord(string wordToFind)
         {
             List<WordEntity> words = DictionaryEntity!.Words!;
             foreach (var word in words)

@@ -27,6 +27,8 @@
         <StackPanel HorizontalAlignment="Left" Margin="0, 190, 0, 0">
             <TextBlock x:Name="NameHeadline" Visibility="Hidden" Text="Name:" FontSize="20" FontFamily="Rod" Foreground="White" TextWrapping="Wrap" Margin="18,10,0,0"/>
             <TextBlock x:Name ="WordName" Visibility="Hidden" Text="Word Name" TextWrapping="Wrap" FontSize="20" FontFamily="Rod" Foreground="White" Margin="18,0,0,0"/>
+            <TextBlock x:Name ="CategoryHeadline" Visibility="Hidden" Text="Category:" TextWrapping="Wrap" FontSize="20" FontFamily="Rod" Foreground="White" Margin="18,0,0,0"/>
+            <TextBlock x:Name ="CategoryName" Visibility="Hidden" Text="TextBlock" TextWrapping="Wrap" FontSize="20" FontFamily="Rod" Foreground="White" Margin="18,0,0,0"/>
             <TextBlock x:Name="DescriptionHeadLine" Visibility="Hidden" Text="Description:" FontSize="20" FontFamily="Rod" Foreground="White" Margin="18,10,0,0"/>
             <TextBlock x:Name="Description" Visibility="Hidden" FontSize="20" FontFamily="Rod" Foreground="White" TextWrapping="Wrap" Text="TextBlock" Margin="18,0,0,0"/>
         </StackPanel>

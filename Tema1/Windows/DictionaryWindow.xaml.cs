@@ -30,7 +30,7 @@ namespace Tema1
             {
                 CategoryComboBox.ItemsSource = _controllerEntity.DictionaryEntity!.categories!.Keys;
                 SearchTextBox.ItemsSource = _controllerEntity.DictionaryEntity!.wordsNames();
-                    //new string[] { "Cuvant1", "Masa", "Laptop", "Manusa" };
+                //new string[] { "Cuvant1", "Masa", "Laptop", "Manusa" };
             }
 
             //ImageContainer.Source = _controllerEntity.ConvertStringToImageSource("D:/Informatica/ANUL II/MAP/MAPTema1/Tema1/images/laptop.JPG");
@@ -50,7 +50,7 @@ namespace Tema1
 
             List<string> wordNames = filteredWords.Select(word => word.Name).ToList();
 
-            SearchTextBox.ItemsSource= wordNames;
+            SearchTextBox.ItemsSource = wordNames;
             SearchTextBox.IsDropDownOpen = true;
         }
 
@@ -59,19 +59,23 @@ namespace Tema1
         {
             int x = 0;
             string searchText = SearchTextBox.Text;
-            if(e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
                 string description = _controllerEntity.GetDescriptionForWord(searchText);
                 string imagePath = _controllerEntity.GetImageForWord(searchText);
+                string category = _controllerEntity.GetCategoryForWord(searchText);
 
                 if (_controllerEntity.checkTextValid(searchText))
                 {
-                    NameHeadline.Visibility= Visibility.Visible;
+                    NameHeadline.Visibility = Visibility.Visible;
                     WordName.Text = searchText;
                     WordName.Visibility = Visibility.Visible;
-                    DescriptionHeadLine.Visibility= Visibility.Visible;
+                    DescriptionHeadLine.Visibility = Visibility.Visible;
                     Description.Text = description;
                     Description.Visibility = Visibility.Visible;
+                    CategoryHeadline.Visibility = Visibility.Visible;
+                    CategoryName.Text = category;
+                    CategoryName.Visibility = Visibility.Visible;
                     ImageContainer.Source = _controllerEntity.ConvertStringToImageSource(imagePath);
                     ImageContainer.Visibility = Visibility.Visible;
                     return;
@@ -80,6 +84,8 @@ namespace Tema1
                 WordName.Visibility = Visibility.Hidden;
                 DescriptionHeadLine.Visibility = Visibility.Hidden;
                 Description.Visibility = Visibility.Hidden;
+                CategoryHeadline.Visibility = Visibility.Hidden;
+                CategoryName.Visibility = Visibility.Hidden;
                 ImageContainer.Visibility = Visibility.Hidden;
             }
         }

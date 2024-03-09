@@ -66,3 +66,5 @@ D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\obj\Debug\net8.0-windows\Windows\AddWo
 D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\obj\Debug\net8.0-windows\Windows\AdminWindow.baml
 D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\obj\Debug\net8.0-windows\Windows\RemoveWordWindow.g.cs
 D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\obj\Debug\net8.0-windows\Windows\RemoveWordWindow.baml
+D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\obj\Debug\net8.0-windows\Windows\ModifyWordWindow.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\obj\Debug\net8.0-windows\Windows\ModifyWordWindow.baml
