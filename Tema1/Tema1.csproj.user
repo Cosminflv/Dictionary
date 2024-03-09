@@ -22,6 +22,9 @@
     <Compile Update="Windows\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\RemoveWordWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Windows\AddWordWindow.xaml">
@@ -40,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\RemoveWordWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

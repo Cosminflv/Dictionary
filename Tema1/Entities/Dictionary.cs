@@ -25,10 +25,16 @@ namespace Tema1.Entities
             if (Words == null) return;
             Words.Add(word);
         }
-        public void removeWord(WordEntity word)
+        public void removeWord(string wordToRemove)
         {
-            if (Words == null) return;
-            Words.Remove(word);
+            foreach(WordEntity word in Words!)
+            {
+                if(word.Name == wordToRemove)
+                {
+                    Words.Remove(word);
+                    break;
+                }
+            }
         }
 
         public List<WordEntity> searchByName(string prefix)

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\App.xaml
-61346288248
+7794489482
 
-17-1388166719
+18-60828898
 2021428198630
-Windows\AddWordWindow.xaml;Windows\AdminWindow.xaml;Windows\DictionaryWindow.xaml;Windows\GameWindow.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;
+Windows\AddWordWindow.xaml;Windows\AdminWindow.xaml;Windows\DictionaryWindow.xaml;Windows\GameWindow.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;Windows\RemoveWordWindow.xaml;
 
 True
 
