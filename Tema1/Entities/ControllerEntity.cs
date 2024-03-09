@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
+using System.Windows.Media;
+using Microsoft.VisualBasic;
 
 namespace Tema1.Entities
 {
@@ -22,7 +25,7 @@ namespace Tema1.Entities
 
         public bool performLogin(string username, string password)
         {
-            List<Tuple<string, string>>? accounts = _jsonHandlerEntity.getAccounts("D:\\Informatica\\ANUL II\\MAP\\Tema1\\Tema1\\Json\\Accounts.json");
+            List<Tuple<string, string>>? accounts = _jsonHandlerEntity.getAccounts("D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Json\\Accounts.json");
 
             if (accounts == null)
             {
@@ -43,7 +46,7 @@ namespace Tema1.Entities
 
         public bool initDictionary()
         {
-            List<WordEntity>? deserializedWords = _jsonHandlerEntity.getWordsFromJson("D:\\Informatica\\ANUL II\\MAP\\Tema1\\Tema1\\Json\\Words.json");
+            List<WordEntity>? deserializedWords = _jsonHandlerEntity.getWordsFromJson("D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Json\\Words.json");
 
             if (deserializedWords == null) return false;
 
@@ -99,6 +102,68 @@ namespace Tema1.Entities
                 }
             }
             return categoriesMap;
+        }
+
+        public ImageSource? ConvertStringToImageSource(string imagePath)
+        {
+            try
+            {
+                // Create a new BitmapImage object
+                BitmapImage imageSource = new BitmapImage();
+
+                // Set the image source URI to the provided string path
+                imageSource.BeginInit();
+                imageSource.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+                imageSource.EndInit();
+
+                return imageSource;
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that may occur during conversion
+                Console.WriteLine("Error converting string to ImageSource: " + ex.Message);
+                return null;
+            }
+        }
+
+        public String GetImageForWord(String wordToFind)
+        {
+            List<WordEntity> words = DictionaryEntity!.Words!;
+            foreach (var word in words)
+            {
+                if (wordToFind.Equals(word.Name))
+                {
+                    if (word.ImagePath != "")
+                    {
+                        return word.ImagePath!;
+                    }
+                }
+            }
+            return "D:/Informatica/ANUL II/MAP/MAPTema1/Tema1/images/no_image.JPG";
+        }
+
+        public String GetDescriptionForWord(String wordToFind)
+        {
+            List<WordEntity> words = DictionaryEntity!.Words!;
+            foreach (var word in words)
+            {
+                if (wordToFind.Equals(word.Name))
+                {
+                    return word.Description;
+                }
+            }
+
+            return "No description available";
+        }
+
+        public bool checkTextValid(String text)
+        {
+            List<WordEntity> words = DictionaryEntity!.Words!;
+            foreach (var word in words)
+            {
+                if (text == word.Name) return true;
+            }
+            return false;
         }
     }
 }

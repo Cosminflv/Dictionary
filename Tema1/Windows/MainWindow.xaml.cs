@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Microsoft.VisualBasic;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -9,6 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Tema1.Entities;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Tema1
 {
@@ -23,15 +25,15 @@ namespace Tema1
             controllerEntity = new ControllerEntity();
             InitializeComponent();
 
-            //List<WordEntity> words = new List<WordEntity>() {
-            //    new WordEntity("Minge", "Obiect sportiv", "Sport", null),
-            //    new WordEntity("Laptop", "Obiect electronic", "Electronice", null),
-            //    new WordEntity("Aspirina", "Obiect medicinal", "Sanatate", null),
-            //    new WordEntity("Racheta", "Obiect sportiv pentru badminton", "Sport", null),
-            //    new WordEntity("Manusa", "Obiect sportiv pentru baseball", "Sport", null),
-            //};
-            //JsonHandlerEntity jsonHandlerEntity = new JsonHandlerEntity();
-            //jsonHandlerEntity.serializeWords(words, "D:\\Informatica\\ANUL II\\MAP\\Tema1\\Tema1\\Json\\Words.json");
+            List<WordEntity> words = new List<WordEntity>() {
+            new WordEntity("Minge", "Obiect sportiv", "Sport", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\minge.JPG"),
+            new WordEntity("Laptop", "Obiect electronic", "Electronice", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\laptop.JPG"),
+            new WordEntity("Aspirina", "Obiect medicinal", "Sanatate", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\aspirina.JPG"),
+            new WordEntity("Racheta", "Obiect sportiv pentru badminton", "Sport", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\racheta.JPG"),
+            new WordEntity("Manusa", "Obiect sportiv pentru baseball", "Sport", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\manusa.JPG"),
+        };
+            JsonHandlerEntity jsonHandlerEntity = new JsonHandlerEntity();
+            jsonHandlerEntity.serializeWords(words, "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Json\\Words.json");
         }
 
         private void Admin_Button_Click(object sender, RoutedEventArgs e)

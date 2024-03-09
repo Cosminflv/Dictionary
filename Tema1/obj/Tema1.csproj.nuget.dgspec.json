@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Informatica\\ANUL II\\MAP\\Tema1\\Tema1\\Tema1.csproj": {}
+    "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Tema1.csproj": {}
   },
   "projects": {
-    "D:\\Informatica\\ANUL II\\MAP\\Tema1\\Tema1\\Tema1.csproj": {
+    "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Tema1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Informatica\\ANUL II\\MAP\\Tema1\\Tema1\\Tema1.csproj",
+        "projectUniqueName": "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Tema1.csproj",
         "projectName": "Tema1",
-        "projectPath": "D:\\Informatica\\ANUL II\\MAP\\Tema1\\Tema1\\Tema1.csproj",
+        "projectPath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Tema1.csproj",
         "packagesPath": "C:\\Users\\cosmi\\.nuget\\packages\\",
-        "outputPath": "D:\\Informatica\\ANUL II\\MAP\\Tema1\\Tema1\\obj\\",
+        "outputPath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cosmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,6 +48,10 @@
             "DotNetProjects.WpfToolkit.Input": {
               "target": "Package",
               "version": "[6.1.94, )"
+            },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

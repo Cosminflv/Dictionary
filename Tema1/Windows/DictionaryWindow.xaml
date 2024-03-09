@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tema1"
+        xmlns:local="clr-namespace:Tema1" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
         mc:Ignorable="d"
         Title="DictonaryWindow" Height="450" Width="800"
         Background="Gray">
@@ -17,7 +17,20 @@
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20, 150, 0, 0">
             <Label Content="Search:" FontFamily="Rod" FontSize="15" Foreground="White" VerticalAlignment="Center" Margin="0,0,25,0"/>
-            <ComboBox x:Name="SearchTextBox" Width="431" IsEditable="True" SelectionChanged="SearchTextBox_SelectionChanged" TextBoxBase.TextChanged="SearchTextBox_TextChanged" IsTextSearchEnabled="True" Height="30"/>
+            <controls:AutoCompleteBox x:Name="SearchTextBox" Keyboard.KeyDown="SearchTextBox_KeyDown"  Width="327">
+            </controls:AutoCompleteBox>
         </StackPanel>
+        <Button HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="36" Height="27" Background="#FF6F6F6F" Click="BackButton_Click">
+            <Image Source="D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\images\back_icon.png" Stretch="Fill" Width="30"/>
+        </Button>
+
+        <StackPanel HorizontalAlignment="Left" Margin="0, 190, 0, 0">
+            <TextBlock x:Name="NameHeadline" Visibility="Hidden" Text="Name:" FontSize="20" FontFamily="Rod" Foreground="White" TextWrapping="Wrap" Margin="18,10,0,0"/>
+            <TextBlock x:Name ="WordName" Visibility="Hidden" Text="Word Name" TextWrapping="Wrap" FontSize="20" FontFamily="Rod" Foreground="White" Margin="18,0,0,0"/>
+            <TextBlock x:Name="DescriptionHeadLine" Visibility="Hidden" Text="Description:" FontSize="20" FontFamily="Rod" Foreground="White" Margin="18,10,0,0"/>
+            <TextBlock x:Name="Description" Visibility="Hidden" FontSize="20" FontFamily="Rod" Foreground="White" TextWrapping="Wrap" Text="TextBlock" Margin="18,0,0,0"/>
+        </StackPanel>
+
+        <Image x:Name="ImageContainer" Visibility="Hidden" Height="186" Margin="592,248,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="208"/>
     </Grid>
 </Window>

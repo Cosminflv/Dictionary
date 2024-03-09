@@ -33,5 +33,8 @@
         </Button>
         <!-- Error Message -->
         <Label x:Name="ErrorMessageLabel" Content="Invalid username or password!" FontFamily="Rod" FontSize="15" Background="White" Foreground="Red" Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,320,0,0"/>
+        <Button HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="36" Height="27" Background="#FF6F6F6F" Click="BackButton_Click">
+            <Image Source="D:/Informatica/ANUL II/MAP/MAPTema1/Tema1/images/back_icon.png" Stretch="Fill" Width="30"/>
+        </Button>
     </Grid>
 </Window>

@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "tAfUCUCNEWQ7FNkQvVYSDhf5chr5/gQxyJu39NaCykVA8XB5abnCTU/d9MUY2uS8KBinuizND59UEe1U4zsQXg==",
+  "dgSpecHash": "Gm4H+j2ik4a7Wm841k360nw8EJM4Sf24NzqSo49oanlQweXfxDWErrcVFPXDU2HayLA49L79zQRXPDQk5w8j6A==",
   "success": true,
-  "projectFilePath": "D:\\Informatica\\ANUL II\\MAP\\Tema1\\Tema1\\Tema1.csproj",
+  "projectFilePath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Tema1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\cosmi\\.nuget\\packages\\dotnetprojects.wpftoolkit.input\\6.1.94\\dotnetprojects.wpftoolkit.input.6.1.94.nupkg.sha512"
+    "C:\\Users\\cosmi\\.nuget\\packages\\dotnetprojects.wpftoolkit.input\\6.1.94\\dotnetprojects.wpftoolkit.input.6.1.94.nupkg.sha512",
+    "C:\\Users\\cosmi\\.nuget\\packages\\materialdesigncolors\\3.0.0\\materialdesigncolors.3.0.0.nupkg.sha512",
+    "C:\\Users\\cosmi\\.nuget\\packages\\materialdesignthemes\\5.0.0\\materialdesignthemes.5.0.0.nupkg.sha512",
+    "C:\\Users\\cosmi\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
   ],
   "logs": []
 }

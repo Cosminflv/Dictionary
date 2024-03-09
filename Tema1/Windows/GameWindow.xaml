@@ -8,7 +8,10 @@
         Title="GameWindow" Height="450" Width="800"
         Background="Gray">
     <Grid>
-        <Label Content="Dictionary" FontFamily="Impact" Foreground="White" FontSize="45" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" Height="64" Width="264"/>
-        
+        <Label Content="Game" FontFamily="Impact" Foreground="White" FontSize="45" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" Height="64" Width="264"/>
+        <Button HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="36" Height="27" Background="#FF6F6F6F" Click="BackButton_Click">
+            <Image Source="D:/Informatica/ANUL II/MAP/MAPTema1/Tema1/images/back_icon.png" Stretch="Fill" Width="30"/>
+        </Button>
+
     </Grid>
 </Window>

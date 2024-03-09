@@ -92,5 +92,16 @@ namespace Tema1.Entities
 
             return selectedCategory;
         }
+
+        public List<string> wordsNames()
+        {
+            List<string> words = new List<string> ();
+
+            foreach(WordEntity word in Words!)
+            {
+                words.Add(word.Name);
+            }
+            return words;
+        }
     }
 }

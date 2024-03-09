@@ -27,7 +27,13 @@ namespace Tema1
             _controllerEntity = controllerEntity;
             _controllerEntity.initDictionary();
             if (_controllerEntity.initDictionary() == true)
+            {
                 CategoryComboBox.ItemsSource = _controllerEntity.DictionaryEntity!.categories!.Keys;
+                SearchTextBox.ItemsSource = _controllerEntity.DictionaryEntity!.wordsNames();
+                    //new string[] { "Cuvant1", "Masa", "Laptop", "Manusa" };
+            }
+
+            //ImageContainer.Source = _controllerEntity.ConvertStringToImageSource("D:/Informatica/ANUL II/MAP/MAPTema1/Tema1/images/laptop.JPG");
         }
 
         private void CategoryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -42,53 +48,47 @@ namespace Tema1
 
             if (filteredWords.Count == 0) return;
 
-            // Clear existing items
-            SearchTextBox.Items.Clear();
+            List<string> wordNames = filteredWords.Select(word => word.Name).ToList();
 
-            // Add matching words to the ComboBox
-            foreach (var word in filteredWords)
-            {
-                SearchTextBox.Items.Add(word.Name);
-            }
-
-            // Open the ComboBox dropdown
+            SearchTextBox.ItemsSource= wordNames;
             SearchTextBox.IsDropDownOpen = true;
-            
         }
 
 
-        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void SearchTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            string searchText = SearchTextBox.Text.ToLower();
-
-            if (string.IsNullOrEmpty(searchText)) { return; }
-
-            int selectedIndex = CategoryComboBox.SelectedIndex;
-
-            string? selectedCategory = _controllerEntity.DictionaryEntity!.getCategoryByIndex(selectedIndex);
-
-            List<WordEntity> matchingWords = _controllerEntity.search(searchText, selectedCategory);
-
-            if(matchingWords.Count == 0) { SearchTextBox.IsDropDownOpen = false; return; }
-
-            // Clear existing items
-            SearchTextBox.Items.Clear();
-
-            // Add matching words to the ComboBox
-            foreach (var word in matchingWords)
+            int x = 0;
+            string searchText = SearchTextBox.Text;
+            if(e.Key == Key.Enter)
             {
-                SearchTextBox.Items.Add(word.Name);
-            }
+                string description = _controllerEntity.GetDescriptionForWord(searchText);
+                string imagePath = _controllerEntity.GetImageForWord(searchText);
 
-            // Open the ComboBox dropdown
-            SearchTextBox.IsDropDownOpen = true;
-            
+                if (_controllerEntity.checkTextValid(searchText))
+                {
+                    NameHeadline.Visibility= Visibility.Visible;
+                    WordName.Text = searchText;
+                    WordName.Visibility = Visibility.Visible;
+                    DescriptionHeadLine.Visibility= Visibility.Visible;
+                    Description.Text = description;
+                    Description.Visibility = Visibility.Visible;
+                    ImageContainer.Source = _controllerEntity.ConvertStringToImageSource(imagePath);
+                    ImageContainer.Visibility = Visibility.Visible;
+                    return;
+                }
+                NameHeadline.Visibility = Visibility.Hidden;
+                WordName.Visibility = Visibility.Hidden;
+                DescriptionHeadLine.Visibility = Visibility.Hidden;
+                Description.Visibility = Visibility.Hidden;
+                ImageContainer.Visibility = Visibility.Hidden;
+            }
         }
 
-
-        private void SearchTextBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            return;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }
