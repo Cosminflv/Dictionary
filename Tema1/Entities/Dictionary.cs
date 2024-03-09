@@ -103,5 +103,15 @@ namespace Tema1.Entities
             }
             return words;
         }
+
+        public bool checkWordExistence(String text)
+        {
+            if(Words == null) return false;
+            foreach (var word in Words!)
+            {
+                if (text == word.Name) return true;
+            }
+            return false;
+        }
     }
 }
