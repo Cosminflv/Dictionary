@@ -8,10 +8,27 @@
         Title="GameWindow" Height="450" Width="800"
         Background="Gray">
     <Grid>
-        <Label Content="Game" FontFamily="Impact" Foreground="White" FontSize="45" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" Height="64" Width="264"/>
+        <Label Content="Game" FontFamily="Impact" Foreground="White" FontSize="45" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Height="64" Width="264"/>
         <Button HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="36" Height="27" Background="#FF6F6F6F" Click="BackButton_Click">
             <Image Source="D:/Informatica/ANUL II/MAP/MAPTema1/Tema1/images/back_icon.png" Stretch="Fill" Width="30"/>
         </Button>
+
+
+        <Label x:Name="DescriptionLabel" Content="Description:" FontFamily="Rod" FontSize="15" Foreground="White" VerticalAlignment="Top" Margin="28,114,400,0"/>
+
+        <Image x:Name="ImageContainer" Visibility="Visible" Height="186" Margin="521,89,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="208"/>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0, 0, 0, 25">
+            <Button x:Name="CheckWordButton" Content="Check Word" Width="100" HorizontalAlignment="Left" Click="CheckWordButton_Click" Margin="0 ,0, 20, 0"/>
+            <TextBox x:Name="GuessBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="37" Margin="0 ,0, 20, 0" TextChanged="TextBox_TextChanged"/>
+            <Button x:Name="NextWordButton" Content="Next Word" Width="100" HorizontalAlignment="Right" Click="NextWordButton_Click"/>
+        </StackPanel>
+        <Label x:Name="StatusLabel" Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"
+               FontFamily="Impact" FontSize="20" Foreground="Black" Background="White"
+               Margin="0,296,0,0" Height="45" VerticalAlignment="Top" Width="186"/>
+
+
+
 
     </Grid>
 </Window>

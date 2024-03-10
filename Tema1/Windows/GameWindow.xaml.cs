@@ -19,8 +19,10 @@ namespace Tema1
     /// </summary>
     public partial class GameWindow : Window
     {
+        private string guessedWord;
         public GameWindow()
         {
+            guessedWord = "";
             InitializeComponent();
         }
 
@@ -29,6 +31,21 @@ namespace Tema1
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            guessedWord = GuessBox.Text;
+        }
+
+        private void CheckWordButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NextWordButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
