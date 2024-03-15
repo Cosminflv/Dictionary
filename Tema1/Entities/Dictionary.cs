@@ -37,27 +37,6 @@ namespace Tema1.Entities
             }
         }
 
-        public List<WordEntity> searchByName(string prefix)
-        {
-            List<WordEntity> matchingWords = new List<WordEntity>();
-
-            if (Words != null)
-            {
-                foreach (WordEntity word in Words)
-                {
-                    string wordName = word.Name.ToLower();
-                    // Check if the name of the word begins with the prefix
-                    if (wordName.StartsWith(prefix))
-                    {
-                        matchingWords.Add(word);
-                    }
-                }
-            }
-
-            return matchingWords;
-        }
-
-
         public List<WordEntity> searchByCategory(string category)
         {
             List<WordEntity> result = new List<WordEntity> ();
@@ -69,25 +48,6 @@ namespace Tema1.Entities
                 if(word.Category == category) result.Add(word);
             }
             return result;
-        }
-
-        public List<WordEntity> searchByCategoryAndName(string prefix, String category)
-        {
-            List<WordEntity> matchingWords = new List<WordEntity>();
-
-            if (Words != null)
-            {
-                foreach (WordEntity word in Words)
-                {
-                    string wordName = word.Name.ToLower();
-                    // Check if the name of the word begins with the prefix and matches the category
-                    if (wordName.StartsWith(prefix) && word.Category == category)
-                    {
-                        matchingWords.Add(word);
-                    }
-                }
-            }
-            return matchingWords;
         }
 
         public string? getCategoryByIndex(int index)

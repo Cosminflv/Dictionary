@@ -47,26 +47,6 @@ namespace Tema1.Entities
             return result;
         }
 
-        public List<WordEntity> searchByName(string input)
-        {
-            if (DictionaryEntity == null) { return new List<WordEntity>(); }
-
-            List<WordEntity>? result = DictionaryEntity.searchByName(input);
-
-            return result;
-        }
-
-        public List<WordEntity> search(string input, string? category)
-        {
-            if (DictionaryEntity == null) { return new List<WordEntity>(); }
-
-            if (category == null) return DictionaryEntity.searchByName(input);
-
-            if (string.IsNullOrEmpty(input) && category != null) return DictionaryEntity.searchByCategory(category!);
-
-            return DictionaryEntity.searchByCategoryAndName(input, category!);
-        }
-
         private Dictionary<string, int> GetUniqueCategories(List<WordEntity> words)
         {
             Dictionary<string, int> categoriesMap = new Dictionary<string, int>();
