@@ -30,10 +30,7 @@ namespace Tema1
             {
                 CategoryComboBox.ItemsSource = _controllerEntity.DictionaryEntity!.categories!.Keys;
                 SearchTextBox.ItemsSource = _controllerEntity.DictionaryEntity!.wordsNames();
-                //new string[] { "Cuvant1", "Masa", "Laptop", "Manusa" };
             }
-
-            //ImageContainer.Source = _controllerEntity.ConvertStringToImageSource("D:/Informatica/ANUL II/MAP/MAPTema1/Tema1/images/laptop.JPG");
         }
 
         private void CategoryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

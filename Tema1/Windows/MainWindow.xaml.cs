@@ -29,13 +29,13 @@ namespace Tema1
             InitializeComponent();
 
         //    List<WordEntity> words = new List<WordEntity>() {
-        //    new WordEntity("Minge", "Obiect sportiv", "Sport", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\minge.JPG"),
-        //    new WordEntity("Laptop", "Obiect electronic", "Electronice", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\laptop.JPG"),
-        //    new WordEntity("Aspirina", "Obiect medicinal", "Sanatate", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\aspirina.JPG"),
-        //    new WordEntity("Racheta", "Obiect sportiv pentru badminton", "Sport", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\racheta.JPG"),
-        //    new WordEntity("Manusa", "Obiect sportiv pentru baseball", "Sport", "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\images\\manusa.JPG"),
+        //    new WordEntity("Minge", "Obiect sportiv", "Sport", "/images/minge.JPG"),
+        //    new WordEntity("Laptop", "Obiect electronic", "Electronice", "/images/laptop.JPG"),
+        //    new WordEntity("Aspirina", "Obiect medicinal", "Sanatate", "/images/aspirina.JPG"),
+        //    new WordEntity("Racheta", "Obiect sportiv pentru badminton", "Sport", "/images/racheta.JPG"),
+        //    new WordEntity("Manusa", "Obiect sportiv pentru baseball", "Sport", "/images/manusa.JPG"),
         //};
-        //    jsonHandlerEntity.serializeWords(words, "D:\\Informatica\\ANUL II\\MAP\\MAPTema1\\Tema1\\Json\\Words.json");
+        //    jsonHandlerEntity.serializeWords(words, @"..\..\..\Json\Words.json");
         }
 
         private void Admin_Button_Click(object sender, RoutedEventArgs e)
@@ -56,7 +56,7 @@ namespace Tema1
 
         private void Game_Button_Click(object sender, RoutedEventArgs e)
         {
-            var gameWindow = new GameWindow();
+            var gameWindow = new GameWindow(jsonHandlerEntity);
             gameWindow.Show();
             this.Close();   
             

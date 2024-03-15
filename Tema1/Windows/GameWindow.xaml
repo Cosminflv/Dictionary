@@ -14,16 +14,16 @@
         </Button>
 
 
-        <Label x:Name="DescriptionLabel" Content="Description:" FontFamily="Rod" FontSize="15" Foreground="White" VerticalAlignment="Top" Margin="28,114,400,0"/>
+        <Label x:Name="DescriptionLabel" FontFamily="Rod" FontSize="15" Foreground="White" VerticalAlignment="Top" Margin="28,114,400,0"/>
 
         <Image x:Name="ImageContainer" Visibility="Visible" Height="186" Margin="521,89,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="208"/>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0, 0, 0, 25">
             <Button x:Name="CheckWordButton" Content="Check Word" Width="100" HorizontalAlignment="Left" Click="CheckWordButton_Click" Margin="0 ,0, 20, 0"/>
             <TextBox x:Name="GuessBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="37" Margin="0 ,0, 20, 0" TextChanged="TextBox_TextChanged"/>
-            <Button x:Name="NextWordButton" Content="Next Word" Width="100" HorizontalAlignment="Right" Click="NextWordButton_Click"/>
+            <Button x:Name="NextWordButton" Visibility="Hidden" Content="Next Word" Width="100" HorizontalAlignment="Right" Click="NextWordButton_Click"/>
         </StackPanel>
-        <Label x:Name="StatusLabel" Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"
+        <Label x:Name="StatusLabel" Visibility="Hidden" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"
                FontFamily="Impact" FontSize="20" Foreground="Black" Background="White"
                Margin="0,296,0,0" Height="45" VerticalAlignment="Top" Width="186"/>
 

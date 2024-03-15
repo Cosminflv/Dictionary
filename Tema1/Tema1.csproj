@@ -9,12 +9,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\algocalmin.JPG" />
+    <None Remove="images\aspirina.JPG" />
+    <None Remove="images\back_icon.png" />
+    <None Remove="images\laptop.jpg" />
+    <None Remove="images\manusa.JPG" />
+    <None Remove="images\minge.JPG" />
+    <None Remove="images\no_image.JPG" />
+    <None Remove="images\racheta.JPG" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DotNetProjects.WpfToolkit.Input" Version="6.1.94" />
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="images\" />
+    <Resource Include="images\algocalmin.JPG" />
+    <Resource Include="images\aspirina.JPG" />
+    <Resource Include="images\back_icon.png" />
+    <Resource Include="images\laptop.jpg" />
+    <Resource Include="images\manusa.JPG" />
+    <Resource Include="images\minge.JPG" />
+    <Resource Include="images\no_image.JPG" />
+    <Resource Include="images\racheta.JPG" />
   </ItemGroup>
 
 </Project>

@@ -12,7 +12,7 @@ namespace Tema1.Entities
 
         public Dictionary<string, int>? categories { get; set; }
 
-        public DictionaryEntity(List<WordEntity> words, Dictionary<string, int> categories)
+        public DictionaryEntity(List<WordEntity> words, Dictionary<string, int>? categories)
         {
             this.Words = words;
             this.categories = categories;
@@ -118,6 +118,20 @@ namespace Tema1.Entities
                 if (text == word.Name) return word;
             }
             return null;
+        }
+
+        public List<WordEntity>? pickRandomWords()
+        {
+ 
+            if (Words == null || Words.Count == 0) return null;
+
+            Random random = new Random();
+
+            List<WordEntity> shuffledWords = Words.OrderBy(x => random.Next()).ToList();
+
+            List<WordEntity> randomWords = shuffledWords.Take(5).ToList();
+
+            return randomWords;
         }
     }
 }
